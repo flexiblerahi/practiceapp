@@ -4,6 +4,12 @@
  * building robust, powerful web applications using React + Laravel.
  */
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'jquery/dist/jquery.min.js';
+//Datatable Modules
+import "datatables.net-dt/js/dataTables.dataTables"
+import "datatables.net-dt/css/jquery.dataTables.min.css"
+
 require('./bootstrap');
 
 /**
@@ -13,3 +19,4 @@ require('./bootstrap');
  */
 
 require('./components/Example');
+require('./page/Index');
