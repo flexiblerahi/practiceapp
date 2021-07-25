@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,15 +17,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+    // return view('raihan.index');
 });
 
 Auth::routes();
 
-Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/index', [HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
-Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/index', [HomeController::class, 'index'])->name('home');
 
 // Route::get('/home', function ()
 // {
@@ -34,3 +36,6 @@ Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->nam
 Route::get('/home', [PostController::class, 'show']);
 
 Route::resource('post', PostController::class);
+Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');

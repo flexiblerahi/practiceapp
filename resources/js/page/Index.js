@@ -1,82 +1,70 @@
-import ReactDOM from "react-dom";
-import React, { useEffect, useReducer, useState } from "react";
-import PostServices from "../Services/PostServices";
+// import React, {useEffect} from "react";
+import ReactDOM, { findDOMNode } from "react-dom"
+import $ from 'jquery';
+import React, { Component, useEffect } from 'react'
 
 const Index = () => {
-    const [state, setState] = useState({
-        fnum: 0,
-        lnum: 0,
-        total: 0,
-        data: [],
-    });
+    useEffect(()=> {
+        jQuerycode()
+    }, [])
 
-    const handleInputChange = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        setState({ ...state, [name]: value }, () => totalNumber);
-    };
-
-    useEffect(() => {
-        getPosts();
-        console.log("and this is before time");
-        setTimeout(() => {
-            $("#another").DataTable();
-        }, 1000);
-    }, []);
-
-    const getPosts = async () => {
-        const response = await PostServices.list();
-        // console.log("🚀 ~ file: index.js ~ line 26 ~ getPosts ~ response", response)
-        setState({ data: response });
-    };
-
-    let totalNumber = parseInt(state.fnum) + parseInt(state.lnum);
-
-    // console.log(`state`, state);
-
-    let postData = "";
-    if (state.data) {
-        postData = state.data.map((post) => (
-            <tr key={post.id}>
-                <td>{post.name}</td>
-                <td>{post.email}</td>
-                <td>{post.address}</td>
-            </tr>
-        ));
-        // $('#example').DataTable();
-        // postData.length > 0 ? $('#example').DataTable() : '';
+    const count = 0;
+    const jQuerycode = () => {
+        $("#mydiv").on("click", function() {
+            alert(`count ${count+1}`)
+        })
     }
 
-    // if(postData > 0) ;
+    // const jQuerycode = () => {
+    //     // var state = true;
+    //     // $( "#button" ).on( "click", function() {
+    //     //     if ( state ) {
+    //     //       $( "#effect" ).animate({
+    //     //         backgroundColor: "#red",
+    //     //         color: "#fff",
+    //     //         width: 500
+    //     //       }, 3000 );
+    //     //     } else {
+    //     //       $( "#effect" ).animate({
+    //     //         backgroundColor: "#fff",
+    //     //         color: "#000",
+    //     //         width: 240
+    //     //       }, 3000 );
+    //     //     }
+    //     //     state = !state;
+    //     //   });
+    // }
 
-    return (
-        <>
-            <div className="MainDiv">
-                <div className="container">
-                    <table id="another" className="display">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>email</th>
-                                <th>Address</th>
-                            </tr>
-                        </thead>
-                        <tbody>{postData}</tbody>
-                        <tfoot>
-                            <tr>
-                                <th>Name</th>
-                                <th>email</th>
-                                <th>Address</th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-            </div>
-        </>
-    );
-};
+    return (<>
+        <div className="divClass" id="mydiv">hello world</div>
+        
+            </>)
 
-export default Index;
+}
+
+export default Index
+
+// export default class Index extends Component {
+
+//     jQuerycode = () => {
+//         $(".button").click(function(){
+//          alert('found')
+        
+//         });
+//       }
+//       componentDidMount(){
+//         this.jQuerycode()
+//       }
+//       render() {
+//         return (
+//           <div>
+//             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci vel voluptates sit voluptas illum eveniet consectetur corrupti suscipit nesciunt et, inventore velit quaerat ex deleniti ut facere, voluptate ab? Ducimus.</p>
+//             <button className="button">Click here</button>
+//           </div>
+//         )
+//       }
+// }
+
 
 if (document.getElementById("react-content")) {
     ReactDOM.render(<Index />, document.getElementById("react-content"));
