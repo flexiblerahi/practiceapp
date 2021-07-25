@@ -4,12 +4,6 @@
  * building robust, powerful web applications using React + Laravel.
  */
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'jquery/dist/jquery.min.js';
-//Datatable Modules
-import "datatables.net-dt/js/dataTables.dataTables"
-import "datatables.net-dt/css/jquery.dataTables.min.css"
-
 require('./bootstrap');
 
 /**
@@ -18,5 +12,14 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+require('./carosuel');
 require('./components/Example');
 require('./page/Index');
+require('./slick');
+require('./slick.jquery.json')
+require('./raihan/First')
+import "datatables.net-dt/js/dataTables.dataTables"
+import "datatables.net-dt/css/jquery.dataTables.min.css"
+import $ from 'jquery'; 
+import Slider from "react-slick";
+

@@ -1,39 +1,10 @@
 // import React, {useEffect} from "react";
 import ReactDOM, { findDOMNode } from "react-dom"
-import $ from 'jquery';
+// import getDOMNode from '*'
+// import $ from 'jquery';
 import React, { Component, useEffect } from 'react'
 
 const Index = () => {
-    useEffect(()=> {
-        jQuerycode()
-    }, [])
-
-    const count = 0;
-    const jQuerycode = () => {
-        $("#mydiv").on("click", function() {
-            alert(`count ${count+1}`)
-        })
-    }
-
-    // const jQuerycode = () => {
-    //     // var state = true;
-    //     // $( "#button" ).on( "click", function() {
-    //     //     if ( state ) {
-    //     //       $( "#effect" ).animate({
-    //     //         backgroundColor: "#red",
-    //     //         color: "#fff",
-    //     //         width: 500
-    //     //       }, 3000 );
-    //     //     } else {
-    //     //       $( "#effect" ).animate({
-    //     //         backgroundColor: "#fff",
-    //     //         color: "#000",
-    //     //         width: 240
-    //     //       }, 3000 );
-    //     //     }
-    //     //     state = !state;
-    //     //   });
-    // }
 
     return (<>
         <div className="divClass" id="mydiv">hello world</div>
