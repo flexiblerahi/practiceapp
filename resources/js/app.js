@@ -15,11 +15,14 @@ require('./bootstrap');
 require('./carosuel');
 require('./components/Example');
 require('./page/Index');
-require('./slick');
-require('./slick.jquery.json')
+// require('./slick');
+// require('./slick.jquery.json')
 require('./raihan/First')
-import "datatables.net-dt/js/dataTables.dataTables"
-import "datatables.net-dt/css/jquery.dataTables.min.css"
-import $ from 'jquery'; 
-import Slider from "react-slick";
+require('./raihanBackend/Admin')
+require('jquery')
+require('datatables.net')
+// import "datatables.net-dt/js/dataTables.dataTables"
+// import "datatables.net-dt/css/jquery.dataTables.min.css"
+// import $ from 'jquery'; 
+// import Slider from "react-slick";
 

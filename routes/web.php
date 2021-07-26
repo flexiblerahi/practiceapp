@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     // return view('welcome');
-    return view('raihan.index');
+    return view('raihan.admin');
 });
 
 Auth::routes();
